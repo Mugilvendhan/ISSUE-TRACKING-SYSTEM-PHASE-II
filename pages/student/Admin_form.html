@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/scss/main.scss">
+    <!-- <link rel="stylesheet" href="/nav/style.css"> -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="/nav/script.js"></script>
+    <style>
+        
+    
+        .content-box {
+            border: 2px solid #333;
+            padding: 40px;
+            margin: 50px;
+            background-color: #f4f4f4;
+            border-radius: 15px;
+        }
+  
+    </style>
+</head>
+<body>
+<section>
+    <nav class="navbar navbar-expand-lg p-2.5 fixed-top" style="background-color: rgb(9, 9, 10);">
+        <div class="container-fluid">
+            <div class="heading">
+                <a class="navbar-brand text-white pe-4" href="#">College Issue Tracker <span style="font-size: small;">Student</span></a>
+            </div>
+            <div class="logo">
+                <a href="/index.html"><i class="bi bi-bug-fill"></i></a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" data-bs-theme= "dark" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon "></span>
+              </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link text-white pe-4" href="/pages/student/MyIssues.html">My Issues</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white pe-4" href="/pages/student/createIssue.html">Create Issues</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white pe-4" href="/pages/student/ProfileStudent.html">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white pe-4" data-bs-toggle="modal" data-bs-target="#myModal1" href="#">Logout</a>
+                </li>
+                
+                  
+            </ul>
+            </div>
+        </div>
+    </nav>
+</section>
+    <!-- <div id="mySidebar" class="sidebar p-2">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="/pages/student/ProfileStudent.html">Profile</a>
+        <a href="/pages/student/Academic_cart.html">Academic issues</a>
+        <a href="/pages/student/Infra_cart.html">Infrastructure issues</a>
+        <a href="/pages/student/Admin_cart.html">Administration issues</a>
+        <a  data-bs-toggle="modal" data-bs-target="#myModal1" href="#">Logout</a>
+        
+    </div> -->
+
+    <!-- <div id="main">
+        <button class="btn custom-button" onclick="openNav()" style="margin-top: 50px;">☰ Track</button>
+    </div> -->
+   
+    <!-- <div class="content-container"style="padding-top:56px;"> -->
+        
+    <section style="background-color: #fffcfc;margin-top:80px;">
+        
+        <div class="row align-items-center">
+            <div class="col text-center"">
+              <h2>Report On Administrative Issues</h2>
+            </div>      
+          </div>
+          <div class="container">
+            <form action="" >
+              <div class="col0 row row-cols-lg-2 row-cols-md-2 row-cols-1 content pt-5 ps-3  border-rounded">
+                  <div class="col1 col">
+                      <div class="row1">
+                          <div class=" w-75">
+                              <label for="name" class="form-label">First Name<span style="color: red;">*</span></label>
+                              <input type="text" class="form-control" onkeyup="FnameVal()" id="name" placeholder="Enter your name">
+                          </div>
+                            <span id="nameError" class="error"></span><br>
+                      </div>
+                      <div class="row1">
+                          <div class="mt-3 w-75">
+                              <label for="email" class="form-label">Email Address<span style="color: red;">*</span></label>
+                              <input type="text" class="form-control" onkeyup="emailVal()" id="email" placeholder="name@example.com" >
+                            </div>
+                            <span id="emailError" class="error"></span><br>
+                      </div>
+          
+                      <div class="row1">
+                        <label for="dept" class="mt-3">Department<span style="color: red;">*</span></label>
+                          <select class="form-select mt-2 w-75" onchange="deptVal()" id="dept" name="dept">
+                            <option>Select</option>
+                            <option>Computer science and Engineering</option>
+                            <option>Mechanical Engineering</option>
+                            <option>Civil Engineering</option>
+                            <option>Electrical and Electronic Engineering</option>
+                            <option>Electronic and Communication Engineering</option>
+                        </select>
+                          <span id="deptError" class="error"></span><br>
+                    </div>
+          
+                    <div class="row1">
+                      <label for="location" >Issue facing on<span style="color: red;">*</span></label>
+                        <select class="form-select w-75 mt-2" onchange="locationVal()" id="location" name="location">
+                          <option>Select</option>
+                          <option>Enrollment</option>
+                          <option>Registration</option>
+                          <option>Fees payment</option>
+                          <option>Documentation</option>
+                          <option>others</option>
+          
+                      </select>
+                        <span id="locationError" class="error"></span><br>
+                  </div>
+                      <div class="row1">
+                          <div class="mt-3 w-75">
+                              <label for="description" class="form-label">Description<span style="color: red;">*</span></label>
+                              <input type="text" class="form-control" onkeyup="descriptionVal()" id="description" placeholder="Enter the detailed description">
+                            </div>
+                            <span id="descriptionError" class="error"></span><br>
+                      </div>
+                     
+                  </div>
+                  <div class="col2 col" >
+                  <div class="row1">
+                      <label for="count" class="mt-0">How many people facing this issue?<span style="color: red;">*</span></label>
+                        <select class="form-select mt-2 w-75" onchange="countVal()" id="count" name="count">
+                          <option>Select</option>
+                          <option>1</option>
+                          <option>2-5</option>
+                          <option>6-10</option>
+                          <option>11-20</option>
+                          <option>21-30</option>
+                          <option>31-40</option>
+                          <option>More than 40</option>
+                      </select>
+                        <span id="countError" class="error"></span><br>
+                  </div>
+          
+          
+                      <div class="row1">
+                          <label for="priority" class="mt-2">Priority<span style="color: red;">*</span></label>
+                            <select class="form-select mt-2 w-75" onchange="priorityVal()" id="priority" name="priority">
+                              <option>Select</option>
+                              <option>High</option>
+                              <option>Medium</option>
+                              <option>Low</option>
+                              <!-- Add more options as needed -->
+                          </select>
+                            <span id="priorityError" class="error"></span><br>
+                      </div>
+                      <div class="row1">
+                          <div class="mt-3 w-75">
+                              <label for="prt" class="form-label">Preferred resolution time<span style="color: red;">*</span></label>
+                              <input type="date" onchange="prtVal()" class="form-control" id="prt" placeholder="Enter preferred resolution time" >
+                            </div>
+                            <span id="prtError" class="error"></span><br>
+                      </div>
+                      <div class="row1">
+                          <div class="mt-3 w-75">
+                              <label for="mobile" class="form-label">Mobile Number<span style="color: red;">*</span></label>
+                              <input type="tel" class="form-control" onkeyup="mobVal()" id="mobile" placeholder="Enter your mobile number" >
+                            </div>
+                            <span id="mobileError" class="error"></span><br>
+                      </div>
+          
+          
+          
+                          <div class="mt-3 w-75">
+                              <label for="fileInput" class="form-label">Attachments<span style="color: red;">*</span></label>
+                              <input class="form-control" onkeyup="fileVal()" type="file" id="fileInput">
+                          </div>
+                          <span id="fileError" class="error"></span><br>
+          
+                      </div>
+          
+              </div>
+              <center><div class="container mb-4 pb-3 "><br>
+                  <button type="button" class="btn btn-primary " onclick="validateForm()" style="background-color: #0f0f10;">Submit</button>
+              </div></center>
+          
+               <!-- The Modal -->
+          
+          <div class="modal" id="myModal" data-bs-toggle="modal" data-bs-target="#myModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+          
+                <div class="modal-header">
+                  <h4 class="modal-title fw-bold">Successful</h4>
+                  <button type="button"class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+          
+                <div class="modal-body">
+                  <p style="color: rgb(89, 143, 8); font-weight: bold" >Form submitted successfully</p>
+                </div>
+          
+                <div class="modal-footer">
+                  <button type="button" class="btn button"data-bs-dismiss="modal">Close</button>
+                </div>
+          
+              </div>
+            </div>
+          </div>
+          
+          </form>
+          </div>
+      </section>
+      <div class="modal" id="myModal1">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        
+          
+          <div class="modal-body">
+            <p style="font-size: 16px;"><b>Are you sure want to logout?</b></p>
+          </div>
+        
+          <div class="modal-footer">
+            <a href="/pages/index.html"><button type="button" class="btn " style="background-color: #0a0a0a; color: white;" data-bs-dismiss="modal">Yes</button></a>
+            <a href="/pages/student/ProfileStudent.html type="button" class="btn button"data-bs-dismiss="modal">No</button></a>
+          </div>
+        
+        </div>
+        </div>
+        </div>                                                                                                                                                                                                                                                                                                                                                   
+      <script>
+        function openNav() {
+          document.getElementById("mySidebar").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+        }
+      
+        function closeNav() {
+          document.getElementById("mySidebar").style.width = "0";
+          document.getElementById("main").style.marginLeft= "0";
+        }
+    </script>
+    <script>
+        function openNav() {
+          document.getElementById("mySidebar").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+        }
+    
+        function closeNav() {
+          document.getElementById("mySidebar").style.width = "0";
+          document.getElementById("main").style.marginLeft= "0";
+        }
+    
+        function validateForm() {
+        FnameVal();
+        emailVal();
+        deptVal();
+        locationVal();
+        descriptionVal();
+        countVal();
+        priorityVal();
+        prtVal();
+        mobVal();
+        fileVal();
+        if (
+                    !document.getElementById('nameError').innerHTML &&
+                    !document.getElementById('emailError').innerHTML &&
+                    !document.getElementById('deptError').innerHTML &&
+                    !document.getElementById('locationError').innerHTML &&
+                    !document.getElementById('descriptionError').innerHTML &&
+                    !document.getElementById('priorityError').innerHTML &&
+                    !document.getElementById('prtError').innerHTML &&
+                    !document.getElementById('mobileError').innerHTML &&
+                    !document.getElementById('fileError').innerHTML
+                ) {
+                    // Display the success alert box
+                    document.getElementById('myModal').style.display = 'block';
+                }
+            }
+    
+    
+    
+            function FnameVal(){
+                var isValid = true;
+    
+                var name = document.getElementById('name').value;
+                var nameError = document.getElementById('nameError');
+                nameError.innerHTML = "";
+                if (name.trim() === "") {
+                    nameError.innerHTML = "First Name is required";
+                    isValid = false;
+                }
+                else if(!/^[a-zA-Z ]+$/.test(name)){
+                    nameError.innerHTML = "First Name is invalid";
+                    isValid = false;
+                }
+    
+            }
+    
+    
+            function emailVal(){
+                var isValid = true;
+                var email = document.getElementById('email').value;
+                var emailError = document.getElementById('emailError');
+                emailError.innerHTML = "";
+                if (email.trim() === "") {
+                    emailError.innerHTML = "Email Address is required";
+                    isValid = false;
+                }
+                else if (!/\S+@\S+\.\S+/.test(email)) {
+                    emailError.innerHTML = "Invalid email address";
+                    isValid = false;
+                }
+            }
+    
+    
+            function deptVal(){
+                var isValid = true;
+                var dept = document.getElementById('dept').value;
+                var deptError = document.getElementById('deptError');
+                deptError.innerHTML = "";
+                if (dept.trim() === "Select") {
+                    deptError.innerHTML = "Department is required";
+                    isValid = false;
+                }
+            }
+    
+            function locationVal(){
+                var isValid = true;
+                var location = document.getElementById('location').value;
+                var locationError = document.getElementById('locationError');
+                locationError.innerHTML = "";
+                if (location.trim() === "Select") {
+                    locationError.innerHTML = "Select one option";
+                    isValid = false;
+                }
+            }
+    
+            function descriptionVal(){
+                var isValid = true;
+                var description = document.getElementById('description').value;
+                var descriptionError = document.getElementById('descriptionError');
+                descriptionError.innerHTML = "";
+                if (description.trim() === "") {
+                    descriptionError.innerHTML = "Detailed description is required";
+                    isValid = false;
+                }
+            }
+            function countVal(){
+                var isValid = true;
+                var count = document.getElementById('count').value;
+                var countError = document.getElementById('countError');
+                countError.innerHTML = "";
+                if (count.trim() === "Select") {
+                    countError.innerHTML = "Required column";
+                    isValid = false;
+                }
+            }
+            
+            // function classroomVal(){
+            //     var isValid = true;
+    
+            //     var classroom = document.getElementById('classroom').value;
+            //     var classroomError = document.getElementById('classroomError');
+            //     classroomError.innerHTML = "";
+            //     if (classroom.trim() === "") {
+            //         classroomError.innerHTML = "Room number is required";
+            //         isValid = false;
+            //     }
+            // }
+    
+            function priorityVal(){
+                var isValid = true;
+                var priority = document.getElementById('priority').value;
+                var priorityError = document.getElementById('priorityError');
+                priorityError.innerHTML = "";
+                if (priority === "Select") {
+                    priorityError.innerHTML = "Priority is required";
+                    isValid = false;
+                }
+            }
+    
+            function prtVal(){
+                var isValid = true;
+                var prt = document.getElementById('prt').value;
+                var prtError = document.getElementById('prtError');
+                prtError.innerHTML = "";
+                var currentDate = new Date();
+                var selectedDate = new Date(prt);
+                if (prt === "") {
+                    prtError.innerHTML = "Resolution time is required";
+                    isValid = false;
+                }
+                if (selectedDate <= currentDate) {
+                    prtError.innerHTML = "Resolution time cannot be the past date";
+                    isValid = false;
+                }
+            }
+    
+            function mobVal(){
+                var isValid = true;
+                var mobile = document.getElementById('mobile').value;
+                var mobileError = document.getElementById('mobileError');
+                mobileError.innerHTML = "";
+                if (mobile.trim() === "") {
+                    mobileError.innerHTML = "Mobile Number is required";
+                    isValid = false;
+                }
+                else if (!/^[6789]\d{9}$/.test(mobile)) {
+                    mobileError.innerHTML = "Invalid mobile number";
+                    isValid = false;
+                }
+                return isValid;
+            }
+    
+            function fileVal(){
+                var isValid = true;
+                var fileInput = document.getElementById('fileInput').value;
+                var fileError = document.getElementById('fileError');
+                fileError.innerHTML = "";
+                var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+                if (!allowedExtensions.exec(fileInput)) {
+                    fileError.innerHTML = "Invalid file type. Please upload a JPG or PNG file.";
+                    isValid = false;
+                }
+    
+              }
+    
+    
+    </script>
+   
+
+</body>
+</html>
+
+
+
